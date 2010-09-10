@@ -105,7 +105,7 @@ Shopify.resizeImage = function(image, size) {
 // POST to cart/add.js returns the JSON of the line item associated with the added item.
 // -------------------------------------------------------------------------------------
 Shopify.addItem = function(variant_id, quantity, callback) {
-  var quantity = quantity || 1;
+  quantity = quantity || 1;
   var params = {
     type: 'POST',
     url: '/cart/add.js',
