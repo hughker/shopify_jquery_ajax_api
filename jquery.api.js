@@ -10,6 +10,17 @@ for its callback to send your 3rd request, etc.
 
 */
 
+/**
+ * Modified by Mitchell Amihod 
+ *  We make some mods. consider them feedback :) See comments/commit messages
+ * Changes include:
+ *      addItemFromForm: allow for passing in of form element, OR string selector
+ *      updateCartFromForm: allow for passing in of form element, OR string selector
+ *
+ * To see how I make use of these changes, see ajaxify-shop.js : http://github.com/meeech/klocko/blob/master/assets/ajaxify-shop.js) 
+ * 
+ * Sept 02, 2010
+ */
 if ((typeof Shopify) === 'undefined') {
   Shopify = {};
 }
