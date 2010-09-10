@@ -1,0 +1,3 @@
+Fork of [http://github.com/carolineschnapp/shopify_jquery_ajax_api](http://github.com/carolineschnapp/shopify_jquery_ajax_api)
+
+Just some minor mods to the jQuery Wrapper for Shopify Ajax API.
