@@ -272,18 +272,24 @@ Shopify.clear = function(callback) {
 // ---------------------------------------------------------
 // POST to cart/update.js returns the cart in JSON.
 // ---------------------------------------------------------
-Shopify.updateCartFromForm = function(form_id, callback) {
+//Allow use of form element instead of id.
+//This makes it a bit more flexible. Every form doesn't need an id.
+//Once you are having someone pass in an id, might as well make it selector based, or pass in the element itself, 
+//since you are just wrapping it in a jq().
+//@param HTMLElement the form element which was submitted. Or you could pass in a string selector such as the #form_id. 
+//@param function callback callback fuction if you like, but I just override Shopify.onCartUpdate() instead
+Shopify.updateCartFromForm = function(form, callback) {
   var params = {
     type: 'POST',
     url: '/cart/update.js',
-    data: jQuery('#' + form_id).serialize(),
+    data: jQuery(form).serialize(),
     dataType: 'json',
     success: function(cart) {
       if ((typeof callback) === 'function') {
-        callback(cart);
+        callback(cart, form);
       }
       else {
-        Shopify.onCartUpdate(cart);
+        Shopify.onCartUpdate(cart, form);
       }
     },
     error: function(XMLHttpRequest, textStatus) {
